@@ -24,6 +24,7 @@ This report assesses key security controls, data protection practices, complianc
 |----------------------|--------------------|-----------------------|------------------------|---------------|---------------------|---------------|
 | Free/ChatGPT (Basic) | Yes, AES-256       | Yes, TLS 1.2+         | Yes                    | Standard OpenAI ToS applies | No SSO, no SLA, no data deletion guarantees | https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance |
 | ChatGPT Plus         | Yes, AES-256       | Yes, TLS 1.2+         | Yes                    | Standard OpenAI ToS applies | No SSO, no SLA, limited support | https://openai.com/blog/chatgpt-plus |
+| ChatGPT Team         | Yes, AES-256       | Yes, TLS 1.2+         | No (opt-out enforced)  | Enhanced IP protections under enterprise agreement | Invitation control, team management, no SSO or SLA | https://openai.com/chatgpt/team, https://openai.com/enterprise-privacy |
 | ChatGPT Enterprise   | Yes, AES-256       | Yes, TLS 1.2+         | No (opt-out enforced)  | Enhanced IP protections under enterprise agreement | SSO, audit logs, extended retention, data residency options | https://openai.com/enterprise-privacy |
 
 *Include URLs to official docs, and reference screenshots where needed.*
