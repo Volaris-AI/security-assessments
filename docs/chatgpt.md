@@ -18,6 +18,18 @@ This report assesses key security controls, data protection practices, complianc
 
 ## 2. Vendor Overview
 
+### 2.1 Product Tiers & Feature Availability
+
+| Tier                 | Encryption at Rest | Encryption in Transit | Data Used for Training | IP Protection | Enterprise Controls | Evidence URLs |
+|----------------------|--------------------|-----------------------|------------------------|---------------|---------------------|---------------|
+| Free/ChatGPT (Basic) | Yes, AES-256       | Yes, TLS 1.2+         | Yes                    | Standard OpenAI ToS applies | No SSO, no SLA, no data deletion guarantees | https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance |
+| ChatGPT Plus         | Yes, AES-256       | Yes, TLS 1.2+         | Yes                    | Standard OpenAI ToS applies | No SSO, no SLA, limited support | https://openai.com/blog/chatgpt-plus |
+| ChatGPT Enterprise   | Yes, AES-256       | Yes, TLS 1.2+         | No (opt-out enforced)  | Enhanced IP protections under enterprise agreement | SSO, audit logs, extended retention, data residency options | https://openai.com/enterprise-privacy |
+
+*Include URLs to official docs, and reference screenshots where needed.*
+
+## 2.2 Vendor/Product Details
+
 - **Product/Service Description:** AI-powered conversational agent offering chat-based interfaces, developer APIs, and plugins.
 - **Deployment Model:** Cloud-based SaaS hosted on AWS.
 - **Geographical Locations:** Primary data processing in the United States (east and west regions).
