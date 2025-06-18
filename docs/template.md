@@ -1,5 +1,15 @@
 # Security Governance Report Template
 
+**Instructions for Completion:**
+Please fill out each section with clear, factual information and provide supporting evidence. For each item addressed:
+
+- Include URLs to relevant documentation, configurations, or logs.
+- Attach or reference screenshots or attachments as evidence where appropriate.
+- If no evidence or details are found, explicitly state “No findings” and do not fabricate any information.
+
+Use this template as a guiding structure for your assessment.
+
+
 This template serves as the foundation for assessing the security governance posture of a software vendor. Use it to standardize evaluations and ensure that all key aspects are covered.
 
 ---
