@@ -21,14 +21,43 @@ This report examines key security controls, data lifecycle management, model tra
 
 ### 2.1 Product Tiers & Feature Availability
 
-| Tier            | Encryption at Rest | Encryption in Transit | Data Used for Training    | IP Protection                        | Enterprise Controls                                | Evidence URLs                                              |
-|-----------------|--------------------|-----------------------|---------------------------|--------------------------------------|----------------------------------------------------|-----------------------------------------------------------|
-| Free            | No findings        | Yes (TLS 1.2+)        | Yes (free tier telemetry) | Standard Lovable Terms               | No SSO, limited messaging (5/day, 30/month)         | https://docs.lovable.dev/user-guides/messaging-limits      |
-| Pro ($25/m)     | No findings        | Yes (TLS 1.2+)        | Yes (opt-out via settings)| Standard Lovable Terms               | Unlimited private projects, custom domains, Dev Mode| https://docs.lovable.dev/user-guides/messaging-limits      |
-| Teams ($30/m)   | No findings        | Yes (TLS 1.2+)        | Yes (opt-out via settings)| Standard Lovable Terms               | Centralized billing, access management               | https://docs.lovable.dev/user-guides/teams               |
-| Enterprise      | No findings        | Yes (TLS 1.2+)        | No (opt-out enforced)     | SLA-backed IP and copyright protections | SSO, audit logs, data residency options            | https://lovable.dev/pricing, https://lovable.dev/privacy  |
+- **Free**
+  - Encryption at Rest: No findings
+  - Encryption in Transit: Yes (TLS 1.2+)
+  - Data Used for Training: Yes (free tier telemetry)
+  - IP Protection: Standard Lovable Terms
+  - Enterprise Controls: No SSO, limited messaging (5/day, 30/month)
+  - Evidence URLs:
+    - https://docs.lovable.dev/user-guides/messaging-limits
 
-*Include URLs to official documentation where noted.*
+- **Pro ($25/m)**
+  - Encryption at Rest: No findings
+  - Encryption in Transit: Yes (TLS 1.2+)
+  - Data Used for Training: Yes (opt-out via settings)
+  - IP Protection: Standard Lovable Terms
+  - Enterprise Controls: Unlimited private projects, custom domains, Dev Mode
+  - Evidence URLs:
+    - https://docs.lovable.dev/user-guides/messaging-limits
+
+- **Teams ($30/m)**
+  - Encryption at Rest: No findings
+  - Encryption in Transit: Yes (TLS 1.2+)
+  - Data Used for Training: Yes (opt-out via settings)
+  - IP Protection: Standard Lovable Terms
+  - Enterprise Controls: Centralized billing, access management
+  - Evidence URLs:
+    - https://docs.lovable.dev/user-guides/teams
+
+- **Enterprise**
+  - Encryption at Rest: No findings
+  - Encryption in Transit: Yes (TLS 1.2+)
+  - Data Used for Training: No (opt-out enforced)
+  - IP Protection: SLA-backed IP and copyright protections
+  - Enterprise Controls: SSO, audit logs, data residency options
+  - Evidence URLs:
+    - https://lovable.dev/pricing
+    - https://lovable.dev/privacy
+
 
 ---
 
