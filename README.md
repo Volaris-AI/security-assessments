@@ -2,6 +2,25 @@
 
 This repository contains security assessment documentation and related tooling.
 
+## Documentation File Naming Convention
+
+All assessment reports must follow the naming pattern:
+
+  `<vendor>-<product-slug>.md`
+
+where:
+- **`<vendor>`** is the lowercase name of the company or project (e.g., `aws`, `openai`, `anthropic`).
+- **`<product-slug>`** is a kebab-case (dash-separated) identifier for the product or service (e.g., `q-developer`, `claude-code`, `security-assessments` if needed for general templates).
+- File extension `.md` indicates a Markdown report.
+
+Examples:
+
+  docs/amazon-q-developer.md  
+  docs/anthropic-claude-code.md  
+  docs/github-copilot.md  
+
+Ensure filenames are all lowercase and contain only dashes, alphanumeric characters, and no spaces.
+
 ## Prerequisites
 
 - Bash (for scripts)
