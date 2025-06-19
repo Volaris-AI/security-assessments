@@ -23,7 +23,7 @@ This report reviews key security controls, data protection practices, compliance
 
 | Tier          | Encryption at Rest | Encryption in Transit | Data Used for Training | IP Protection           | Enterprise Controls                                                 | Evidence URLs                                                                                   |
 |---------------|--------------------|-----------------------|------------------------|-------------------------|----------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
-| Free          | No findings        | No findings           | Yes                    | Standard product terms  | No dedicated support, no team management, no contractual SLAs       | https://www.cursor.com/en/security, https://docs.cursor.com/account/plans-and-usage             |
+| Free          | No findings        | No findings           | Yes                    | Standard product terms  | No dedicated support, no team management, no contractual SLAs       | https://www.cursor.com/en/security https://docs.cursor.com/account/plans-and-usage             |
 | Pro (Paid)    | No findings        | No findings           | No                     | Standard product terms  | Privacy/Ghost Mode, local mode options but no formal SSO or SLAs    | https://docs.cursor.com/account/plans-and-usage, https://docs.cursor.com/account/privacy        |
 | Team          | No findings        | No findings           | No                     | Team Terms of Service   | Invitation control, workspace management, custom Terms of Service   | https://www.cursor.com/en/terms-of-service-teams, https://docs.cursor.com/account/privacy      |
 

@@ -48,7 +48,7 @@ This report assesses security controls, data protection practices, compliance ce
   - Data usage and privacy terms explicitly defined; no customer code used to retrain Copilot models.
 
 Evidence:
-- URL: https://docs.github.com/en/site-policy/github-terms-of-service
+- URL: https://docs.github.com/en/site-policy/github-terms/github-terms-of-service
 - URL: https://resources.github.com/copilot-trust-center/#data-usage
 
 ---
@@ -79,7 +79,7 @@ Evidence:
 
 Evidence:
 - URL: https://docs.github.com/en/github-ae@latest/admin/configuring-organization-settings/enabling-saml-single-sign-on-for-your-organization
-- URL: https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-organization/managing-audit-logs-for-your-organization
+- URL: https://docs.github.com/organizations/keeping-your-organization-secure/reviewing-the-audit-log-for-your-organization/
 
 ---
 
@@ -140,7 +140,7 @@ Evidence:
 - Public post-mortems published for major incidents.
 
 Evidence:
-- URL: https://docs.github.com/en/site-policy/github-trust
+- URL: https://docs.github.com/en/site-policy/security-policies
 
 ---
 

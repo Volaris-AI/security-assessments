@@ -1,0 +1,15 @@
+name: Validate Documentation Links
+on: [push, pull_request]
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node.js environment
+        run: |
+          # Install curl, if not present
+          sudo apt-get update && sudo apt-get install -y curl
+      - name: Run link checker script
+        run: |
+          chmod +x scripts/check-links.sh
+          ./scripts/check-links.sh
