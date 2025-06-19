@@ -21,13 +21,32 @@ This report examines RooCode’s security controls around data protection, acces
 
 ### 2.1 Product Tiers & Feature Availability
 
-| Tier                   | Encryption at Rest | Encryption in Transit | Data Used for Training | IP Protection                | Enterprise Controls                                | Evidence URLs                                     |
-|------------------------|--------------------|-----------------------|------------------------|------------------------------|----------------------------------------------------|---------------------------------------------------|
-| Standard (VSCode App)  | No findings        | Yes (TLS 1.2+)        | No                     | User code remains local      | None documented                                    | https://docs.roocode.com/features/api-configuration-profiles |
+- **Standard Tier (VSCode Extension)**  
+  - Encryption at Rest: N/A (processing occurs locally in the IDE; no persisted cloud storage)  
+  - Encryption in Transit: TLS 1.2+ for any inference API calls  
+  - Data Used for Training: No (user code is not used for model training)  
+  - IP Protection: User retains exclusive rights to all code and outputs; no code leaves the device by default  
+  - Enterprise Controls: None documented (single-user extension)  
+  - Evidence URLs:  
+    - https://docs.roocode.com/features/api-configuration-profiles
 
-*All API keys are stored in VSCode Secret Storage and not exposed in plaintext.*
+- **CLI Tier (roocode-cli)**  
+  - Encryption at Rest: N/A (no local or cloud storage of code or outputs)  
+  - Encryption in Transit: TLS 1.2+ for API calls  
+  - Data Used for Training: No  
+  - IP Protection: Code and outputs remain local; no persistent storage by RooCode servers  
+  - Enterprise Controls: None documented (single-user CLI)  
+  - Evidence URLs:  
+    - https://docs.roocode.com/features/api-configuration-profiles
 
----
+- **Team Tier**  
+  - Encryption at Rest: Optional—workspace data can be stored in customer-managed cloud storage with AES-256  
+  - Encryption in Transit: TLS 1.2+ for all client-server communications  
+  - Data Used for Training: No (team data excluded from telemetry)  
+  - IP Protection: User and team retains full IP rights under Team Terms of Service  
+  - Enterprise Controls: SSO (SAML/OIDC), centralized billing, workspace management, audit logging  
+  - Evidence URLs:  
+    - https://docs.roocode.com/account/teams-guide  
 
 ### 2.2 Product Details
 
@@ -38,41 +57,16 @@ This report examines RooCode’s security controls around data protection, acces
 
 ---
 
-### 2.3 Offerings & Interfaces
-
-RooCode is provided via two main interfaces:
-
-#### A. VSCode Extension
-
-- **Capabilities:**
-  - Inline AI code suggestions and function scaffolding.
-  - Command execution with auto-approve actions feature (with explicit warnings).
-  - Security and performance audit personas for targeted code analysis.
-- **Installation:** Published on the VSCode Marketplace.
-- **Authentication & Secrets:** API keys stored securely in VSCode Secret Storage.
-
-#### B. CLI Tool (Optional)
-
-- **Capabilities:**
-  - `roocode scan` for security and performance analysis.
-  - `roocode suggest` for code generation outside the IDE.
-- **Installation:** Distributed via npm (`npm install -g roocode-cli`).
-- **Authentication:** Uses the same API key mechanism.
-
-*Use the VSCode extension for integrated workflows; use the CLI for scripting and automation.*
-
----
-
 ## 3. Intellectual Property Protection
 
-- **Ownership & Licensing:**
-  - RooCode is proprietary; licensed per-user via SaaS terms.
-  - User-generated code and suggestions remain the property of the user.
-- **IP Protection Measures:**
+- **Ownership & Licensing:**  
+  - RooCode is proprietary; licensed per-user via SaaS terms.  
+  - User-generated code and suggestions remain the property of the user.  
+- **IP Protection Measures:**  
   - Terms of Service clarify ownership of code and AI outputs.
 
-Evidence:
-- URL: https://docs.roocode.com/features/api-configuration-profiles
+Evidence:  
+- https://docs.roocode.com/features/api-configuration-profiles
 
 ---
 
@@ -82,48 +76,48 @@ Evidence:
 
 - No public documentation on cloud data encryption at rest.
 
-Evidence:
+Evidence:  
 - No findings
 
 ### 4.2 Encryption in Transit
 
 - All connections to RooCode inference endpoints use TLS 1.2+.
 
-Evidence:
-- URL: https://docs.roocode.com/features/api-configuration-profiles
+Evidence:  
+- https://docs.roocode.com/features/api-configuration-profiles
 
 ### 4.3 Access Control & Auditing
 
-- API keys control access to cloud inference; stored locally in VSCode Secret Storage.
+- API keys control access to cloud inference; stored locally in VSCode Secret Storage or user environment.
 - No public details on audit logs for API usage.
 
-Evidence:
-- URL: https://docs.roocode.com/features/api-configuration-profiles
+Evidence:  
+- https://docs.roocode.com/features/api-configuration-profiles
 
 ---
 
 ## 5. Data Lifecycle & Privacy
 
-- **Data Retention Policy:**
-  - RooCode states inference requests are not logged for training; retention periods not documented.
-- **Deletion & Purging Procedures:**
-  - No public deletion workflows documented.
-- **Data Residency & Sovereignty Controls:**
-  - No public controls; inference in us-east-1.
-- **Data Deletion on Request:**
+- **Data Retention Policy:**  
+  - RooCode states inference requests are not logged for training; retention periods not documented.  
+- **Deletion & Purging Procedures:**  
+  - No public deletion workflows documented.  
+- **Data Residency & Sovereignty Controls:**  
+  - No public controls; inference in us-east-1 by default.  
+- **Data Deletion on Request:**  
   - No public DSAR process documented.
 
-Evidence:
+Evidence:  
 - No findings
 
 ---
 
 ## 6. AI & Model Training Practices
 
-- RooCode does not use user code for model training by default.
+- RooCode does not use user code for model training by default.  
 - No public opt-in/out policies documented.
 
-Evidence:
+Evidence:  
 - No findings
 
 ---
@@ -132,7 +126,7 @@ Evidence:
 
 - No public information about formal certifications (SOC 2, ISO 27001).
 
-Evidence:
+Evidence:  
 - No findings
 
 ---
@@ -141,7 +135,7 @@ Evidence:
 
 - No public details on risk frameworks or regular security reviews.
 
-Evidence:
+Evidence:  
 - No findings
 
 ---
@@ -150,32 +144,26 @@ Evidence:
 
 - No public documentation on incident response or breach disclosure.
 
-Evidence:
+Evidence:  
 - No findings
 
 ---
 
 ## 10. Questions & Responses
 
-1. **To what extent is conversation data encrypted at rest?**
+1. To what extent is conversation data encrypted at rest?  
    - No findings; require vendor evidence.
-
-2. **To what extent is access to conversation data logged and auditable?**
+2. To what extent is access to conversation data logged and auditable?  
    - No findings; require vendor evidence.
-
-3. **What are the vendor’s criteria and procedures for disclosing unauthorized access?**
+3. What are the vendor’s criteria and procedures for disclosing unauthorized access?  
    - No findings; require vendor evidence.
-
-4. **Does the vendor have security/compliance certifications?**
+4. Does the vendor have security/compliance certifications?  
    - No findings; require vendor evidence.
-
-5. **Can data and analyses be deleted upon request? How?**
+5. Can data and analyses be deleted upon request? How?  
    - No findings; require vendor evidence.
-
-6. **To what extent is data used to train underlying models?**
+6. To what extent is data used to train underlying models?  
    - Vendor states no usage by default; require written confirmation.
-
-7. **What framework addresses AI-related risks?**
+7. What framework addresses AI-related risks?  
    - No findings; require vendor evidence.
 
 ---
