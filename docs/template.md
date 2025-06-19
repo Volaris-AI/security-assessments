@@ -27,7 +27,9 @@ Provide a concise overview of the product/service functionality, key use cases, 
 
 ## 2. Vendor Overview
 
-### 2.1 Product Tiers & Feature Availability
+### 2.1 Product Capabilities & Feature Availability (or Product Tiers & Feature Availability)
+
+For multi-tiered products, use the tier-based list format. For single-tier or standalone tools, describe feature categories instead.
 
 Describe each product/service tier in a concise list format. For each tier, include:
 
