@@ -21,11 +21,35 @@ This report reviews key security controls, data protection practices, compliance
 
 ### 2.1 Product Tiers & Feature Availability
 
-| Tier                | Encryption at Rest | Encryption in Transit | Data Used for Training       | IP Protection           | Enterprise Controls                                      | Evidence URLs                                                                         |
-|---------------------|--------------------|-----------------------|------------------------------|-------------------------|-----------------------------------------------------------|---------------------------------------------------------------------------------------|
-| Free                | Yes (AES-256)      | Yes (TLS 1.2+)        | Yes (telemetry on by default)| Standard Terms of Service | No SSO, no SLA, default telemetry settings                | https://windsurf.com/security                                                     |
-| Pro (Paid)          | Yes (AES-256)      | Yes (TLS 1.2+)        | Yes (configurable telemetry) | Standard Terms of Service | Adjustable telemetry, priority support                    | https://docs.windsurf.com/account/plans-and-usage, https://windsurf.com/security     |
-| Enterprise (Cloud)  | Yes (AES-256)      | Yes (TLS 1.2+)        | No (opt-out enforced)        | Enterprise Terms of Service| SAML SSO, audit logs, data residency, contractual SLAs     | https://windsurf.com/security, https://windsurf.com/terms-of-service-enterprise       |
+- **Free**
+  - Encryption at Rest: Yes (AES-256)
+  - Encryption in Transit: Yes (TLS 1.2+)
+  - Data Used for Training: Yes (telemetry on by default)
+  - IP Protection: Standard Terms of Service
+  - Enterprise Controls: No SSO, no SLA, default telemetry settings
+  - Evidence URLs:
+    - https://windsurf.com/security
+
+- **Pro (Paid)**
+  - Encryption at Rest: Yes (AES-256)
+  - Encryption in Transit: Yes (TLS 1.2+)
+  - Data Used for Training: Yes (configurable telemetry)
+  - IP Protection: Standard Terms of Service
+  - Enterprise Controls: Adjustable telemetry, priority support
+  - Evidence URLs:
+    - https://docs.windsurf.com/account/plans-and-usage
+    - https://windsurf.com/security
+
+- **Enterprise (Cloud)**
+  - Encryption at Rest: Yes (AES-256)
+  - Encryption in Transit: Yes (TLS 1.2+)
+  - Data Used for Training: No (opt-out enforced)
+  - IP Protection: Enterprise Terms of Service
+  - Enterprise Controls: SAML SSO, audit logs, data residency, contractual SLAs
+  - Evidence URLs:
+    - https://windsurf.com/security
+    - https://windsurf.com/terms-of-service-enterprise
+
 
 *Include URLs to official docs and reference screenshots where needed.*
 

@@ -29,11 +29,17 @@ Provide a concise overview of the product/service functionality, key use cases, 
 
 ### 2.1 Product Tiers & Feature Availability
 
-Describe each product/service tier and document:
+Describe each product/service tier in a concise list format. For each tier, include:
 
-- Included security features (e.g., encryption at rest, encryption in transit, IP protection).
-- Any limitations in free or lower-cost tiers.
-- Evidence: URLs or screenshots.
+- **Tier Name**
+  - Encryption at Rest: 
+  - Encryption in Transit: 
+  - Data Used for Training: 
+  - IP Protection: 
+  - Enterprise Controls: 
+  - Evidence URLs:
+    - 
+    - 
 
 ---
 
