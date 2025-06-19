@@ -21,12 +21,24 @@ This report reviews controls for data encryption, access management, deployment 
 
 ### 2.1 Product Tiers & Feature Availability
 
-| Tier                    | Encryption at Rest    | Encryption in Transit | Data Used for Training    | IP Protection           | Enterprise Controls                                                                                               | Evidence URLs                                                            |
-|-------------------------|-----------------------|-----------------------|---------------------------|-------------------------|-------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
-| Developer (app.devin.ai)| AES-256 (hosted)      | TLS 1.2+              | No (opt-out enforced)     | Standard Terms apply    | User login via Cognition SSO; per-user audit logs via DataDog; shared cloud service with tenants isolated via IAM | https://docs.devin.ai/security                                          |
-| Enterprise (VPC)        | AES-256 (customer KMS)| TLS 1.2+              | No                         | Enterprise Terms apply  | VPC deployment, AWS IAM Identity Center SSO, centralized audit logs, configurable retention and data residency   | https://docs.devin.ai/enterprise/overview, https://docs.devin.ai/enterprise/security/enterprise-security |
+- **Developer (app.devin.ai)**
+  - Encryption at Rest: AES-256 (hosted)
+  - Encryption in Transit: TLS 1.2+
+  - Data Used for Training: No (opt-out enforced)
+  - IP Protection: Standard Terms apply
+  - Enterprise Controls: User login via Cognition SSO; per-user audit logs via DataDog; shared cloud service with tenants isolated via IAM
+  - Evidence URLs:
+    - https://docs.devin.ai/security
 
----
+- **Enterprise (VPC)**
+  - Encryption at Rest: AES-256 (customer KMS)
+  - Encryption in Transit: TLS 1.2+
+  - Data Used for Training: No
+  - IP Protection: Enterprise Terms apply
+  - Enterprise Controls: VPC deployment, AWS IAM Identity Center SSO, centralized audit logs, configurable retention and data residency
+  - Evidence URLs:
+    - https://docs.devin.ai/enterprise/overview
+    - https://docs.devin.ai/enterprise/security/enterprise-security
 
 ### 2.2 Product Details
 
@@ -36,8 +48,6 @@ This report reviews controls for data encryption, access management, deployment 
   - **Enterprise:** Private VPC deployment in AWS/Azure with dedicated infrastructure.
 - **Geographical Locations:** AWS regions (us-east-1, us-west-2), Azure regions on request.
 - **Key Stakeholders:** Cognition Security, DevOps, Engineering, Compliance teams.
-
----
 
 ### 2.3 Offerings & Interfaces
 
