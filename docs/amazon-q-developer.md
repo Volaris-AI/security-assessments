@@ -23,7 +23,7 @@ This report examines key security controls, data protection practices, complianc
 
 | Tier                 | Encryption at Rest   | Encryption in Transit | Data Used for Training                  | IP Protection          | Enterprise Controls                                                    | Evidence URLs                                                                                          |
 |----------------------|----------------------|-----------------------|-----------------------------------------|------------------------|-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
-| Free Tier            | AES-256 (inherited)  | TLS 1.2+              | Yes (prompts may be used for improvement)| AWS Service Terms apply | No SSO, no SLA, default telemetry settings                              | https://aws.amazon.com/q/, https://aws.amazon.com/free                                                |
+| Free Tier            | AES-256 (inherited)  | TLS 1.2+              | Yes (prompts may be used for improvement)| AWS Service Terms apply | No SSO, no SLA, default telemetry settings                              | <https://aws.amazon.com/q/>, <https://aws.amazon.com/free>                                                |
 | Pro Subscription     | AES-256 (inherited)  | TLS 1.2+              | No (opt-out enforced for Pro)          | AWS Service Terms apply | SAML SSO via AWS IAM Identity Center, audit logging, configurable telemetry | https://aws.amazon.com/q/developer/, https://aws.amazon.com/q/developer/pricing/                     |
 
 *Include URLs to official docs and reference screenshots where needed.*
