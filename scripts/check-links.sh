@@ -35,7 +35,8 @@ for file in $MD_FILES; do
 done
 
 if (( EXIT_CODE )); then
-  echo -e "\nOne or more links failed. Please fix before pushing."
+  echo -e "\nOne or more links failed."
+  echo "Please review the content of the affected Markdown files, search the internet for updated or valid URLs, update them accordingly, and then re-run this check before pushing."
   exit 1
 fi
 
