@@ -21,10 +21,23 @@ This report covers key controls around data encryption, access management, compl
 
 ### 2.1 Product Tiers & Feature Availability
 
-| Tier            | Encryption at Rest | Encryption in Transit | Data Used for Training | IP Protection           | Enterprise Controls                         | Evidence URLs                                  |
-|-----------------|--------------------|-----------------------|------------------------|-------------------------|---------------------------------------------|------------------------------------------------|
-| Internal Beta   | AES-256            | TLS 1.2+              | No                     | Block IP policy applies | Okta SSO, RBAC, audit logging via Splunk     | https://intranet.block.io/goose/security       |
-| Internal GA     | AES-256            | TLS 1.2+              | Opt-in only            | Block IP policy applies | SSO, RBAC, audit logging, SLA, data residency| https://intranet.block.io/goose/compliance     |
+- **Internal Beta**
+  - Encryption at Rest: AES-256
+  - Encryption in Transit: TLS 1.2+
+  - Data Used for Training: No
+  - IP Protection Measures: Block IP policy applies
+  - Enterprise Controls: Okta SSO, RBAC, audit logging via Splunk
+  - Evidence: https://intranet.block.io/goose/security
+
+- **Internal GA**
+  - Encryption at Rest: AES-256
+  - Encryption in Transit: TLS 1.2+
+  - Data Used for Training: Opt-in only
+  - IP Protection Measures: Block IP policy applies
+  - Enterprise Controls: SSO, RBAC, audit logging, SLA, data residency
+  - Evidence: https://intranet.block.io/goose/compliance
+
+Use this section to determine if enterprise-grade security requires a paid tier.
 
 *Include internal URLs and screenshots where applicable.*
 
