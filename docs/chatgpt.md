@@ -34,12 +34,22 @@ This report examines ChatGPT’s encryption, access controls, privacy practices,
 - **Plus Tier**  
   - Encryption at Rest: AES-256  
   - Encryption in Transit: TLS 1.2+  
-  - Data Used for Training: Yes  
+  - Data Used for Training: Yes (used to improve models)  
   - IP Protection: OpenAI Terms of Service  
   - Enterprise Controls: None  
   - Evidence URLs:  
     - https://openai.com/pricing  
     - https://platform.openai.com/docs/data-usage
+
+- **Teams Tier**  
+  - Encryption at Rest: AES-256  
+  - Encryption in Transit: TLS 1.2+  
+  - Data Used for Training: No (customer data excluded)  
+  - IP Protection: OpenAI Teams Agreement  
+  - Enterprise Controls: SSO (SAML/OIDC), centralized billing, admin console, usage analytics, audit logging  
+  - Evidence URLs:  
+    - https://openai.com/pricing  
+    - https://platform.openai.com/docs/data-usage-enterprise
 
 - **Enterprise Tier**  
   - Encryption at Rest: AES-256  
@@ -85,7 +95,7 @@ This report examines ChatGPT’s encryption, access controls, privacy practices,
 
 ### 4.3 Access Control & Auditing
 
-- Free/Plus: API keys with optional MFA; Enterprise: SSO integration and RBAC.  
+- Free/Plus: API keys with optional MFA; Teams/Enterprise: SSO integration and RBAC.  
 - Audit logs capture all API usage, configuration changes, and admin actions; retained per policy.
 
 **Evidence URLs:**  
@@ -98,11 +108,11 @@ This report examines ChatGPT’s encryption, access controls, privacy practices,
 
 - **Data Retention:**  
   - Free/Plus: data retained for up to 30 days for abuse monitoring.  
-  - Enterprise: configurable retention or zero data retention.  
+  - Teams/Enterprise: configurable retention or zero data retention.  
 - **Deletion & Purging:**  
   - Users can delete conversation history via dashboard; backend purge occurs within 30 days.  
 - **Data Residency Controls:**  
-  - Enterprise customers choose storage region per deployment.  
+  - Teams/Enterprise customers choose storage region per deployment.  
 - **Data Subject Requests:**  
   - DSAR process available via Privacy Portal; fulfilled within 30 days.
 
@@ -115,7 +125,7 @@ This report examines ChatGPT’s encryption, access controls, privacy practices,
 ## 6. AI & Model Training Practices
 
 - **Training Data Policy:**  
-  - Enterprise tier excludes all customer data from model training.  
+  - Teams/Enterprise tiers exclude all customer data from model training.  
   - Free/Plus data may be used for research/improvement; customers can opt out.  
 - **Anonymization & Privacy:**  
   - Minimal metadata retention; no PII used in training without explicit consent.
@@ -166,7 +176,7 @@ This report examines ChatGPT’s encryption, access controls, privacy practices,
 1. To what extent is customer data encrypted at rest and how are keys managed?  
 2. How granular is audit logging (per user, per request)?  
 3. Can Free/Plus tier users fully opt out of data usage for model training?  
-4. What are the data residency options for Enterprise customers?  
+4. What are the data residency options for Teams and Enterprise customers?  
 5. What is the SLA and process for fulfilling DSAR and deletion requests?  
 6. Which AI governance frameworks and bias mitigation processes are in place?  
 7. Can you share the latest third-party penetration test and compliance report under NDA?
