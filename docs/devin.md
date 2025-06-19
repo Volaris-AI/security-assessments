@@ -78,7 +78,7 @@ Devin is accessible via:
   - Terms of Service and Enterprise Agreement define IP rights and data usage restrictions.
 
 Evidence:
-- URL: https://docs.devin.ai/privacy
+- URL: https://cognition.ai/pages/privacy-policy
 
 ---
 
@@ -119,7 +119,7 @@ Evidence:
 - **DSAR Process:** Privacy policy provides DSAR contact; compliance within 30 days.
 
 Evidence:
-- URL: https://docs.devin.ai/privacy
+- URL: https://cognition.ai/pages/privacy-policy
 
 ---
 
@@ -130,7 +130,7 @@ Evidence:
 - Logging pseudonymization enforced for all data used in analytics.
 
 Evidence:
-- URL: https://docs.devin.ai/privacy (Data usage section)
+- URL: https://cognition.ai/pages/privacy-policy (Data usage section)
 
 ---
 
