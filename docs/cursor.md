@@ -8,6 +8,7 @@
 
 - **Vendor Name:** Cursor AI
 - **Product/Service:** Cursor AI IDE
+- **Product Summary:** Cursor AI IDE is an AI-assisted code editor that integrates contextual code suggestions, navigation tools, and privacy modes (local/Ghost Mode) to keep code and data on-device.
 - **Assessment Date:** 2025-06-18
 - **Prepared By:** [Your Name]
 - **Purpose of Assessment:** Evaluate the security governance posture of the Cursor AI IDE product to inform adoption decisions.

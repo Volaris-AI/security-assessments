@@ -15,11 +15,13 @@ Use this template as a guiding structure for your assessment.
 ## 1. Executive Summary
 
 - **Vendor Name:**
+- **Product/Service:**
+- **Product Summary:**
 - **Assessment Date:**
 - **Prepared By:**
 - **Purpose of Assessment:**
 
-Briefly summarize the scope, objectives, and high-level conclusions of the security governance review.
+Provide a concise overview of the product/service functionality and key use cases to contextualize the assessment. Then briefly summarize the scope, objectives, and high-level conclusions of the security governance review.
 
 ---
 
