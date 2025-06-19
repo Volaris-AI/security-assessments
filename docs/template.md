@@ -5,12 +5,10 @@ Please fill out each section with clear, factual information and provide support
 
 - Include URLs to relevant documentation, configurations, or logs.
 - Attach or reference screenshots or attachments as evidence where appropriate.
+- When gathering evidence and URLs, use the `exa-search` tool to search the web and retrieve official vendor website details and documentation.
 - If no evidence or details are found, explicitly state “No findings” and do not fabricate any information.
 
 Use this template as a guiding structure for your assessment.
-
-
-This template serves as the foundation for assessing the security governance posture of a software vendor. Use it to standardize evaluations and ensure that all key aspects are covered.
 
 ---
 
@@ -27,12 +25,26 @@ Briefly summarize the scope, objectives, and high-level conclusions of the secur
 
 ## 2. Vendor Overview
 
+### 2.1 Product Tiers & Feature Availability
+
+Describe each product or service tier the vendor offers. For each tier, document:
+
+- Included security features (e.g., encryption at rest, encryption in transit, IP protection measures).
+- Any limitations or absence of enterprise-grade capabilities in free or lower-cost tiers.
+- Evidence: URLs to official documentation or screenshots.
+
+Use this section to determine if enterprise-grade security requires a paid tier.
+
+---
+
+### 2.2 Vendor/Product Details
+
 - **Product/Service Description:**
 - **Deployment Model:** (SaaS, On-Premises, Hybrid)
 - **Geographical Locations:**
 - **Key Stakeholders:**
 
-Outline the vendor’s business model and the context in which the product or service is delivered.
+Outline the vendor’s business model and context of service delivery.
 
 ---
 
