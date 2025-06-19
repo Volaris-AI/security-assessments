@@ -21,12 +21,25 @@ This report examines key security controls, data protection practices, complianc
 
 ### 2.1 Product Tiers & Feature Availability
 
-| Tier                 | Encryption at Rest   | Encryption in Transit | Data Used for Training                  | IP Protection          | Enterprise Controls                                                    | Evidence URLs                                                                                          |
-|----------------------|----------------------|-----------------------|-----------------------------------------|------------------------|-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
-| Free Tier            | AES-256 (inherited)  | TLS 1.2+              | Yes (prompts may be used for improvement)| AWS Service Terms apply | No SSO, no SLA, default telemetry settings                              | <https://aws.amazon.com/q/>, <https://aws.amazon.com/free>                                                |
-| Pro Subscription     | AES-256 (inherited)  | TLS 1.2+              | No (opt-out enforced for Pro)          | AWS Service Terms apply | SAML SSO via AWS IAM Identity Center, audit logging, configurable telemetry | https://aws.amazon.com/q/developer/, https://aws.amazon.com/q/developer/pricing/                     |
+- **Free Tier**  
+  - Encryption at Rest: AES-256 (inherited)  
+  - Encryption in Transit: TLS 1.2+  
+  - Data Used for Training: Yes (prompts and usage telemetry may be used for service improvement)  
+  - IP Protection: Customer content remains owned by customer; governed by AWS Service Terms  
+  - Enterprise Controls: None (no SSO, no SLA, default telemetry collection)  
+  - Evidence URLs:  
+    - https://aws.amazon.com/q/  
+    - https://aws.amazon.com/free
 
-*Include URLs to official docs and reference screenshots where needed.*
+- **Pro Subscription**  
+  - Encryption at Rest: AES-256 (inherited)  
+  - Encryption in Transit: TLS 1.2+  
+  - Data Used for Training: No (customer prompts and sessions are not used for model training)  
+  - IP Protection: Customer retains all rights; AWS Service Terms apply  
+  - Enterprise Controls: SAML SSO via AWS IAM Identity Center, audit logging via CloudTrail, configurable telemetry settings  
+  - Evidence URLs:  
+    - https://aws.amazon.com/q/developer/  
+    - https://aws.amazon.com/q/developer/pricing/
 
 ---
 
@@ -45,51 +58,27 @@ Amazon Q Developer offers two primary interfaces, each optimized for specific us
 
 #### A. IDE Plugin
 
-- **Supported IDEs:**
-  - Visual Studio Code, JetBrains IDEs (IntelliJ, PyCharm, GoLand, WebStorm), Eclipse (preview), Visual Studio (via AWS Toolkit), AWS Cloud9, AWS Lambda console.
-- **Features:**
-  - Inline code suggestions from snippets to full functions.
-  - Agentic chat commands (`/dev`, `/review`, `/test`, `/transform`) with workspace context via `@workspace` and `@files` prompts.
-  - Integrated vulnerability and secret scanning directly in the editor.
-  - Customizable team rules via `.amazonq/rules` directory.
-  - Code reference log for auditing suggestions against public code.
-- **Installation & Authentication:**
-  - VS Code: https://marketplace.visualstudio.com/items?itemName=AmazonWebServices.amazon-q-vscode
-  - JetBrains: https://plugins.jetbrains.com/plugin/24267-amazon-q/
-  - Eclipse: https://marketplace.eclipse.org/content/amazon-q
-  - Visual Studio: via AWS Toolkit extension manager
-  - Free Tier authentication: AWS Builder ID or IAM user
-  - Pro Tier authentication: AWS IAM Identity Center (90-day sessions)
+- **Supported IDEs:** Visual Studio Code, JetBrains (IntelliJ, PyCharm), Eclipse (preview), Visual Studio, Cloud9.
+- **Features:** Inline code suggestions, agentic chat commands, secret/vuln scanning, team rules, audit logs.
+- **Authentication:** AWS Builder ID (Free), IAM Identity Center (Pro).  
 
 #### B. Chat Interface
 
-- **Channels:** AWS Management Console panel, AWS Chatbot (Microsoft Teams, Slack), AWS CLI (`aws q chat`), AWS Console Mobile App, GitHub Enterprise Cloud (preview), GitLab Duo.
-- **Features:**
-  - Natural language Q&A for AWS services, architectural guidance, cost optimization, and diagnostics.
-  - Persistent session history (Free: 30-day retention; Pro: configurable retention).
-  - Integration with notifications, alerts, and automated workflows.
-- **Access & Setup:**
-  - AWS Console: enable Q panel in the sidebar
-  - AWS Chatbot: configure Amazon Q Developer in Teams/Slack via AWS Chatbot settings
-  - CLI: use `aws q chat` command
-  - GitHub/GitLab: install preview plugins or workflows
+- **Channels:** AWS Console Q panel, AWS Chatbot (Slack/Teams), AWS CLI (`aws q chat`), GitHub/GitLab plugins.
+- **Features:** Natural language Q&A, session history (Free: 30 days; Pro: configurable), workflow integrations.
 
-*Use the IDE plugin for code-centric development and agentic coding; use chat interfaces for broader conversational and operational queries.*
+*Use IDE plugin for code workflows; chat interfaces for operational queries.*
 
 ---
 
 ## 3. Intellectual Property Protection
 
-- **Ownership & Licensing:**
-  - Amazon Q Developer is proprietary AWS software governed by the AWS Service Terms.
-  - Underlying foundation models licensed via AWS Bedrock agreements.
-- **IP Protection Measures:**
-  - AWS Service Terms define IP rights; customer content remains owned by the customer.
-  - Pro subscription guarantees no customer content used for service improvement.
+- **Ownership & Licensing:** Customer retains all rights to prompts, outputs, and session content; AWS Service Terms govern platform use.
+- **IP Protection Measures:** Pro tier guarantees no customer data used for model improvement; Service Terms include IP clauses.
 
 Evidence:
-- URL: https://aws.amazon.com/service-terms/
-- URL: https://aws.amazon.com/q/developer/ ("Your content is yours")
+- https://aws.amazon.com/service-terms/
+- https://aws.amazon.com/q/developer/ (Content Ownership section)
 
 ---
 
@@ -97,111 +86,88 @@ Evidence:
 
 ### 4.1 Encryption at Rest
 
-- AWS-managed storage uses AES-256 encryption for persisted Q Developer data (prompts, logs, telemetry).
-- Keys managed by AWS KMS with automatic rotation.
+- AWS-managed storage uses AES-256 for persisted data (prompts, logs, telemetry).
+- AWS KMS manages keys with automatic rotation.
 
-Evidence:
-- URL: https://docs.aws.amazon.com/bedrock/latest/userguide/security.html#encryption-at-rest
+Evidence: https://docs.aws.amazon.com/bedrock/latest/userguide/security.html#encryption-at-rest
 
 ### 4.2 Encryption in Transit
 
-- All communications secured via TLS 1.2+.
-- Certificates provisioned through AWS Certificate Manager.
+- All communications use TLS 1.2+; certificates via AWS Certificate Manager.
 
-Evidence:
-- URL: https://docs.aws.amazon.com/bedrock/latest/userguide/security.html#transport-security
+Evidence: https://docs.aws.amazon.com/bedrock/latest/userguide/security.html#transport-security
 
 ### 4.3 Access Control & Auditing
 
-- Free Tier: IAM user with MFA; Pro: SAML SSO via AWS IAM Identity Center.
-- Audit logs capture all API calls, chat interactions, and code scans; logs viewable in AWS CloudTrail.
+- Free: IAM user with MFA; Pro: SAML SSO via IAM Identity Center.
+- Audit logs for all API calls and user interactions accessible via AWS CloudTrail.
 
 Evidence:
-- URL: https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html
-- URL: https://aws.amazon.com/q/developer/ (Enterprise controls section)
+- https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html
+- https://aws.amazon.com/q/developer/ (Enterprise controls)
 
 ---
 
 ## 5. Data Lifecycle & Privacy
 
-- **Data Retention Policy:** Free Tier data retained 30 days; Pro Tier data retention configurable via AWS Console.
-- **Deletion & Purging:** Users can delete session history and telemetry via AWS Q settings; backend purge within 30 days.
-- **Data Residency Controls:** Pro Tier allows specifying storage region.
-- **Data Deletion on Request:** AWS Data Subject Request procedures apply; completed within 30 days with proof.
+- **Retention:** Free: 30-day session logs; Pro: configurable retention.
+- **Deletion:** Users can purge session data via console; backend purge within 30 days.
+- **Residency:** Pro allows specifying storage region per session.
+- **DSAR:** AWS data subject request process within 30 days.
 
 Evidence:
-- URL: https://aws.amazon.com/q/developer/ (Privacy and telemetry section)
-- URL: https://aws.amazon.com/compliance/data-privacy-faq/
+- https://aws.amazon.com/q/developer/ (Privacy & telemetry)
+- https://aws.amazon.com/compliance/data-privacy-faq/
 
 ---
 
 ## 6. AI & Model Training Practices
 
-- Free Tier telemetry may be used for AWS Bedrock model improvement.
-- Pro Tier disables service-improvement telemetry; customer data not used in training.
-- All telemetry pseudonymized before any analysis.
+- Free Tier: telemetry may be used for model improvement.
+- Pro Tier: telemetry disabled by default; no customer data in training.
+- Telemetry pseudonymized prior to analysis.
 
-Evidence:
-- URL: https://aws.amazon.com/bedrock/faqs/#data_usage
+Evidence: https://aws.amazon.com/bedrock/faqs/#data_usage
 
 ---
 
 ## 7. Security Certifications & Compliance
 
-- SOC 2 Type II (covers AWS Q services)
-- ISO 27001, ISO 27017, ISO 27018
-- FedRAMP Moderate (in AWS GovCloud regions)
-- PCI DSS, HIPAA Eligible
+- SOC 2 Type II, ISO 27001/17/18, FedRAMP Moderate, PCI DSS, HIPAA Eligible.
+- Compliance applies to AWS Q Developer and underlying Bedrock services.
 
-Evidence:
-- URL: https://aws.amazon.com/compliance/programs/
+Evidence: https://aws.amazon.com/compliance/programs/
 
 ---
 
 ## 8. Risk Management & Governance
 
-- Follows NIST Cybersecurity Framework and ISO 27005.
-- Threat modeling and security reviews each quarter.
-- Annual third-party penetration tests; continuous internal assessments.
+- Aligned to NIST CSF and ISO 27005.
+- Quarterly threat modeling; annual penetration tests.
+- Continuous vulnerability scanning via AWS Security Hub.
 
-Evidence:
-- URL: https://aws.amazon.com/security/
+Evidence: https://aws.amazon.com/security/
 
 ---
 
 ## 9. Incident Response & Disclosure
 
-- IR plan aligned to NIST SP 800-61.
-- 24/7 Security Operations Center monitoring; incident triage within 1 hour.
-- Customer notifications within SLA (24 hrs); public bulletins for major incidents.
+- IR plan per NIST SP 800-61; SOC 24/7 monitoring.
+- Customer notifications within 24 hrs of breach detection.
 
-Evidence:
-- URL: https://aws.amazon.com/security/security-bulletins/
+Evidence: https://aws.amazon.com/security/security-bulletins/
 
 ---
 
 ## 10. Questions & Responses
 
-1. **To what extent is conversation data encrypted at rest?**
-   - AES-256 at rest, AWS KMS-managed keys with rotation. (Evidence: 4.1)
-
-2. **To what extent is access to conversation data logged and auditable?**
-   - All interactions logged in AWS CloudTrail, retained per policy. (Evidence: 4.3)
-
-3. **What are the vendor’s procedures for disclosing unauthorized access?**
-   - IR plan triggers notifications within 24 hrs, public bulletins. (Evidence: 9)
-
-4. **What security/compliance certifications do they have? Scope?**
-   - SOC 2, ISO 27001/17/18, FedRAMP, PCI DSS, HIPAA; covers Q Developer, Bedrock, underlying services. (Evidence: 7)
-
-5. **Can conversation data be deleted upon request? How?**
-   - Yes; via AWS console; purge within 30 days under DSAR process. (Evidence: 5)
-
-6. **To what extent is data used to train underlying models?**
-   - Free Tier: telemetry used; Pro Tier: telemetry disabled. (Evidence: 6)
-
-7. **What framework addresses AI-related risks?**
-   - NIST CSF, ISO 27005, threat modeling, red teaming. (Evidence: 8)
+1. **Encryption at rest?** AES-256, KMS-managed (4.1)
+2. **Access logging?** CloudTrail logs all activity (4.3)
+3. **Breach disclosure?** Notifications within 24 hrs (9)
+4. **Certifications?** SOC 2, ISO, FedRAMP, PCI, HIPAA (7)
+5. **Data deletion?** Console purge, 30-day backend purge (5)
+6. **Training data usage?** Free: telemetry used; Pro: disabled (6)
+7. **AI risk framework?** NIST CSF, ISO 27005 (8)
 
 ---
 
