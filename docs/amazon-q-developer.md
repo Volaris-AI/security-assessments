@@ -117,7 +117,7 @@ Evidence:
 - Audit logs capture all API calls, chat interactions, and code scans; logs viewable in AWS CloudTrail.
 
 Evidence:
-- URL: https://docs.aws.amazon.com/cloudtrail/latest/userguide/cloudtrail-user-guide.html
+- URL: https://docs.aws.amazon.com/aws-cloudtrail/latest/userguide/cloudtrail-user-guide.html
 - URL: https://aws.amazon.com/q/developer/ (Enterprise controls section)
 
 ---
